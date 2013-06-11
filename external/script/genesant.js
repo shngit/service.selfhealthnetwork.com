@@ -2,7 +2,7 @@ var referer = document.referrer;
 if((/young./i.test(referer))||(/dev./i.test(referer))){        // dev
     window.onload = function() {
       if(/dashboard/i.test(referer)){
-         document.getElementsByTagName('body')[0].style.overflow="hidden";
+         //document.getElementsByTagName('body')[0].style.overflow="hidden";
          document.getElementById('mpw_footer').style.display="none";         
          var divs = document.getElementById('uxNotificationPanel_uxContainer').getElementsByTagName('*');
          for(var divsub in divs){
@@ -28,7 +28,19 @@ if((/young./i.test(referer))||(/dev./i.test(referer))){        // dev
       }
     }       
 }else if(/qa./i.test(referer)){                             // qa
-   
+       window.onload = function() {
+      if(/dashboard/i.test(referer)){
+         //document.getElementsByTagName('body')[0].style.overflow="hidden";
+         document.getElementById('mpw_footer').style.display="none";         
+         var divs = document.getElementById('uxNotificationPanel_uxContainer').getElementsByTagName('*');
+         for(var divsub in divs){
+              if(/panel-alert/i.test(divs[divsub].className)){
+                  divs[divsub].style.display='none';
+              }
+              
+         }
+      }
+    } 
 }else{                                                      // live
    
 }

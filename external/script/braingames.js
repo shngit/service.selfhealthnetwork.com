@@ -1,3 +1,6 @@
-//document.writeln(window.innerHeight);
-//var iframe = parent.document.getElementById("ifbraingame");
-//	iframe.height = window.innerHeight+'px';
+var referer = document.referrer;
+if((/young./i.test(referer))||(/dev./i.test(referer))){        // dev
+    window.onload = function() {
+
+    }
+}
